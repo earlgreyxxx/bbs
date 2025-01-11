@@ -1,0 +1,11 @@
+#リライトモジュールが使用できない場合は、
+# index.cgiをadmin.cgi/update.cgiなどとコピーして設置する。
+# **CGIDIR** には index.cgiが置かれている仮想(絶対)ディレクトリに置き換える。
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase **CGIDIR**
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(admin|sign|fmanage|headline|gets|update)?$ index.cgi [L,QSA]
+</IfModule>

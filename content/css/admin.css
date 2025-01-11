@@ -1,0 +1,561 @@
+@charset 'UTF-8';
+/*******************************************************************************
+
+  管理者 モード画面 スタイル定義
+
+*******************************************************************************/
+/* latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lato Regular'), local('Lato-Regular'), url(./woff/lato-regular.woff) format('woff');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+@font-face {
+  font-family: 'GenGoM';
+  font-style: normal;
+  src: url(./woff/GenGoM-subset.woff) format('woff');
+}
+@font-face {
+  font-family: 'GenGoL Latin';
+  font-style: normal;
+  src: url(./woff/GenGoL-latin-subset.woff) format('woff');
+}
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('./woff/fontawesome-webfont.woff');
+}
+
+
+body
+{
+	font-size: 90%;
+  font-family: verdana, sans-serif;
+	background: url(../images/noisy-snow.png) fixed center center;
+}
+body.admin-list,body.remover
+{
+	padding-top: 84px;
+}
+input,select,textarea
+{
+	font-size: inherit; 
+  font-family: inherit;
+}
+.no-script
+{
+	border: 1px solid transparent;
+	width:1024px;
+	margin: 0 auto;
+	padding:0.3em;
+	background-color:red;
+	font-size:110%;
+	color:white;
+	text-decoration:blink;
+}
+
+ul.commands
+{
+	position: fixed;
+	margin:  0;
+	padding: 0;
+	list-style: none;
+	text-align: center;
+	left: 0;
+	right: 0;
+	top: 0;
+	border-bottom: 1px solid white;
+	box-shadow: 0 3px 10px rgba(0,0,0,.5);
+  background: #ccc;
+}
+ul.commands > li
+{
+	display: inline-block;
+	float: left;
+	width: 33.3%;
+}
+ul.commands > li:last-child
+{
+	width: 33.4%;
+}
+
+ul.commands > li > a
+{
+	display: block;
+}
+ul.commands > li > a > span
+{
+	display: block;
+	padding: 1.5em 0;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+ul.commands > li > a .button
+{
+	border-radius: 0;
+}
+ul.commands.confirm > li
+{
+  width: 50%;
+}
+ul.commands.confirm > li:last-child
+{
+  width: 50%;
+}
+ul.commands.confirm > li:first-child
+{
+  width: 100%;
+  padding: 1em 0;
+}
+
+
+.notice
+{
+	padding:5px;
+	font-size:85%;
+	color:royalblue;
+	text-align:center;
+}
+
+a
+{
+	text-decoration: none;
+	display: inline-block;
+}
+
+ul.attached-files
+{
+	display: block;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+ul.attached-files > li
+{
+	display: inline-block;
+	margin: 0 .5em 0 0;
+	vertical-align: middle;
+}
+ul.attached-files > li > a
+{
+	display: inline-block;
+	text-decoration: none;
+	color: inherit;
+	margin-right: .5em;
+	line-height: 1.2;
+}
+ul.attached-files > li > a::before
+{
+	font-family: FontAwesome;
+	margin-right: .5em;
+	content: '\f016';
+}
+ul.attached-files > li > a:hover
+{
+	text-decoration: underline;
+}
+
+/*
+一個の記事
+*****************/
+.admin-article
+{
+	border: none;
+	margin: 1em auto 2em;
+	background-color: floralwhite;
+	text-align:left;
+	box-shadow: 0 0 7px rgba(0,0,0,.5);
+	border-radius: .5em;
+	overflow: hidden;
+  min-width: 896px;
+  max-width: 896px;
+	border-collapse: collapse;
+}
+
+.admin-article > .row
+{
+  padding-top: .75em;
+  padding-bottom: .75em;
+}
+
+
+/*
+作成日・更新日行
+*****************/
+.admin-article .row-date
+{
+	background-color: #f9f0a1;
+	font-size: 80%;
+	font-weight: bold;
+	text-align: center;
+}
+.admin-article .row-date time
+{
+	font-size: 120%;
+	font-weight: normal;
+	margin: 0 1em;
+}
+.admin-article .row-date time::after
+{
+	font-family: FontAwesome;
+	margin-left: .5em;
+	content: '\f017';
+}
+
+
+.admin-article .row-date time.created::before
+{
+	content: '作成日：';
+}
+.admin-article .row-date time.updated::before
+{
+	content: '更新日：';
+}
+
+/*
+ヘッダ行
+*********/
+.admin-article .row-head
+{
+	background-color: khaki;
+}
+
+
+.command-order
+{
+  text-align: right;
+}
+.command-order a
+{
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/*
+コンテンツ行
+*************/
+.admin-article .row-content
+{
+  background-color: white;
+}
+
+/*
+フッター行
+**************/
+.admin-article .row-foot
+{
+	padding: 1em 0;
+	text-align: center;
+}
+
+/*
+タイトル・件名など
+********************/
+.admin-article .article-subject
+{
+	font-size: 140%;
+	text-align: left;
+	/* text-shadow: 1px 1px 0 #fff6dc; */
+}
+.admin-article .article-subject .subject-text::before
+{
+	font-family: FontAwesome;
+	margin-right: .5em;
+	content: '\f02c';
+}
+
+.admin-article .article-date
+{
+	font-size: 110%;
+	text-align: right;
+}
+
+.admin-article .articleWrap
+{
+	margin:1em 0;
+	border-top: 1px solid transparent;
+	word-break: break-all;
+}
+
+.admin-article .articleWrap ul,
+.admin-article .articleWrap ol
+{
+	margin: 1em 0;
+}
+.admin-article .articleWrap ul li,
+.admin-article .articleWrap ol li
+{
+	margin-left: 3em;
+}
+.admin-article .articleWrap ul li
+{
+  list-style-type: disc;
+}
+.admin-article .articleWrap ol li
+{
+	list-style-type: decimal;
+}
+
+.admin-article .protected
+{
+	text-align: center;
+	background-color: red;
+	color: yellow;
+	font-weight: bold;
+}
+
+.admin-article .frame-part
+{
+	background-color: khaki;
+}
+
+.admin-article .body-part
+{
+	background-color: white;
+}
+
+.admin-article .direct-link
+{
+  padding: 50px 0;
+  text-align: center;
+}
+.admin-article .direct-link a
+{
+	font-size: 140%;
+	color: royalblue;
+}
+
+.admin-article .image-container
+{
+  margin: 0;
+  padding: 0;
+}
+.admin-article .image-container li
+{
+  display: block;
+  list-style: none;
+  margin: 0 0 1em 0;
+  padding: 5px;
+  background-color: #f1f1f1;
+  overflow: hidden;
+}
+.admin-article .image-container li:last-child
+{
+  margin: 0;
+}
+.admin-article .image-container a
+{
+  display: block;
+}
+.admin-article .image-container img
+{
+  display: block;
+  width: 100%;
+}
+
+/* 管理 リスト表示 */
+table.admin-article-list
+{
+  width: 100%;
+  /* font-size: 85%; */
+}
+table.admin-article-list thead
+{
+  color: rgba(255,255,255,.75);
+}
+
+table.admin-article-list tr.protected {
+  background-color: rgba(255,0,0,.2);
+}
+table.admin-article-list .article-date,
+table.admin-article-list .article-orders
+{
+  white-space: nowrap;
+}
+
+table.admin-article-list .unknown-title
+{
+  opacity: 0; 
+  transition: opacity,2s;
+  color: black;
+}
+
+table.admin-article-list select
+{
+  appearance: none;
+  border: 1px solid #d8d8d8;
+  color: inherit;
+  border-radius: none;
+}
+table.admin-article-list > tbody > tr:hover > *
+{
+  background-color: rgba(0,0,0,.1);
+}
+table.admin-article-list > tbody > tr:hover > * a
+{
+  /* color: white; */
+}
+
+/*ページネーション*/
+ul.pagenation
+{
+  margin: 2em 0;
+  text-align: center;
+	padding: 0;
+}
+ul.pagenation > li
+{
+	border: 1px solid #d8d8d8;
+	display:inline-block;
+	margin: 0 .25em .5em .25em;
+	background-color: white;
+}
+ul.pagenation > li:hover
+{
+	background-color: #eee;
+}
+ul.pagenation > li.current
+{
+	background-color: black;
+	color: white;
+}
+
+ul.pagenation > li > a,
+ul.pagenation > li > span
+{
+	display: block;
+	padding: .5em 1em;
+}
+ul.pagenation > li > a
+{
+	text-decoration: none;
+	color: inherit;
+}
+
+/*次へ・前へのナビゲーション*/
+ul.paging
+{
+  margin: 2em 0;
+  text-align: center;
+}
+ul.paging > li
+{
+  display: inline-block;
+  margin-right: 1em;
+  border: 1px solid #d8d8d8;
+  background-color: #f6f6f6;
+}
+ul.paging > li:hover
+{
+  background-color: white;
+}
+ul.paging > li.prev
+{
+  border-top-left-radius: 1em;
+  border-bottom-left-radius: 1em;
+}
+ul.paging > li.next
+{
+  border-top-right-radius: 1em;
+  border-bottom-right-radius: 1em;
+  margin-left: 1em;
+}
+ul.paging > li > a
+{
+  display: inline-block;
+  padding: .25em 1em;
+  text-decoration: none;
+}
+span.notify
+{
+  margin-right: 1em;
+	display: inline-block;
+	background-color: white;
+	font-size: 70%;
+	border-radius: 5px;
+	padding: 5px .75em 2px;
+	border: 1px dotted #CC6D46;
+}
+span.cat
+{
+  margin-right: 3px;
+	display: inline-block;
+	background-color: #fff6dc;
+	font-size: 70%;
+	border-radius: 5px;
+	padding: 6px .75em 3px;
+}
+
+.jumpMenu
+{
+  width:1024px;
+  padding:.5em;
+  background-color:#eee;
+  text-align:center;
+  margin:0 auto;
+	border-bottom: 2px solid #d8d8d8;
+	box-shadow: 0 1px 7px rgba(0,0,0,.2);
+	text-shadow: 1px 1px 0 white;
+}
+p.commands
+{
+	text-align: center;
+}
+.commands.command-description
+{
+ 	font-size: 110%;
+	color: red;
+}
+.commands.command-remove > input
+{
+	width:150px;
+	font-size:125%;
+	font-weight:bold;
+}
+.commands.command-remove > input[type="submit"]
+{
+	color:blue;
+}
+.commands.command-remove > input[type="button"]
+{
+	color: red;
+}
+span.notice
+{
+	display: inline-block;
+	color: green;
+	font-size: 80%;
+	line-height: 1.25;
+}
+span.message
+{
+	display: inline-block;
+	color: grey;
+	font-size: 90%;
+	line-height: 1.25;
+	margin: .5em 0;
+}
+span.ctrl
+{
+	display: block;
+	margin: .5em 0;
+}
+
+form.submit-remove
+{
+	display: block;
+	margin: 1em 0;
+}
+
+dl.article-data > dt
+{
+  background-color: #eee;
+  margin-bottom: 2px;
+}
+dl.article-data > dd
+{
+  background-color: #f6f6f6;
+  margin-bottom: 2px;
+}

@@ -1,0 +1,159 @@
+@charset 'UTF-8';
+/*******************************************************************************
+
+	ファイル管理ウィンドウのスタイル定義
+
+*******************************************************************************/
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('./woff/fontawesome-webfont.woff');
+}
+body
+{
+	font-size: 86.5%;
+  	font-family:"メイリオ","Hiragino Kaku Gothic Pro W3", "ヒラギノ角ゴ ProN W3", "ヒラギノ角ゴ Pro W3", "Osaka","ＭＳ Ｐゴシック";
+	margin: 0;
+	padding: 0 .5em;
+	background-color: #f3f3f3;
+}
+input,select 
+{
+	font-family: inherit; 
+}
+input.text,
+select.text 
+{
+	font-size:90%;
+	border: 1px solid gray;
+}
+form
+{
+	margin: 0;
+}
+input 
+{
+	font-size: 90%;
+}
+input[type=file]
+{
+	width: 100%; 
+}
+input.filename
+{
+	padding:2px;
+	border:1px solid gray;
+	width: 240px;
+}
+span.filename
+{
+	padding:2px;
+	background-color:#eeeeee;
+	border:1px solid gray;
+	border-left:1px solid #aaaaaa;
+	border-top:1px solid #aaaaaa;
+}
+input[type=submit]
+{
+	border:1px solid gray;
+	background-color:#eeeeee; 
+}
+
+table.fmanage
+{
+	background-color: white;
+	margin: 1em auto;
+	border: 1px solid #d8d8d8;
+	overflow: hidden;
+}
+
+table.fmanage > caption
+{
+	background-color: #ff3d27;
+	color: white;
+	padding: .6em 0 .5em;
+	margin-bottom: .75em;
+}
+
+table.fmanage th,
+table.fmanage td
+{
+	padding: .5em;
+}
+
+table.fmanage > thead
+{
+	background-color: royalblue;
+	color:white;
+}
+
+table.fmanage td.submit-command
+{
+	background-color:#aa0000;
+	text-align: center;
+}
+
+table.fmanage table
+{
+	margin: 0 0 1em;
+	font-size: 90%;
+	border-collapse: collapse;
+}
+
+table.fmanage table th,
+table.fmanage table td
+{
+	border-bottom: 3px solid white;
+}
+
+table.fmanage table th
+{
+  background-color: #eeeeee;
+	vertical-align: middle;
+	text-align: center;
+}
+table.fmanage table td
+{
+	white-space: nowrap;
+}
+
+p.commands
+{
+	text-align: center;
+}
+
+span.notice
+{
+	color: green;
+	font-size: 80%;
+}
+span.ctrl
+{
+	display: block;
+	margin: .5em 0;
+}
+
+ul.attached-files.editor
+{
+	text-align: center;
+	margin: 1em 0;
+	padding: 0;
+}
+ul.attached-files.editor > li
+{
+	display: inline-block;
+	margin: .75em;
+	padding: 0 0 0 20px;
+}
+ul.attached-files.editor > li::before
+{
+  font-family: FontAwesome;
+  font-size: 90%;
+  content: '\f15b';
+  margin-right: .25em;
+}
+
+.error
+{
+	color:green;
+	text-align: center;
+}

@@ -1,0 +1,75 @@
+@charset 'UTF-8';
+/*****************************************************************************
+
+	DATEPICKER ユーザーによる上書き定義
+
+*****************************************************************************/
+div.datepicker
+{
+	font-size: 125%;
+	width: auto;
+	height: auto;
+	border-radius: 5px;
+
+	padding: 5px;
+	border: 1px solid #ccc;
+	background-color: #eee;
+	box-shadow: 5px 5px 5px rgba(0,0,0,0.3);
+  box-sizing: content-box;
+}
+
+div.datepicker table 
+{
+	width: 100%;
+	height: 100%;
+}
+
+div.datepicker table td
+{
+	padding: 5px;
+}
+
+.datepickerContainer
+{
+	top: auto;
+	left: auto;
+	background: rgba(0,0,0,0.8);
+	border-radius: 5px;
+}
+
+.datepickerBorderT
+{
+	display: none;
+}
+
+.datepickerBorderB
+{
+	display: none;
+}
+
+.datepickerBorderL
+{
+	display: none;
+}
+
+.datepickerBorderR
+{
+	display: none;
+}
+
+.datepickerBorderTL
+{
+	display: none;
+}
+.datepickerBorderTR
+{
+	display: none;
+}
+.datepickerBorderBL
+{
+	display: none;
+}
+.datepickerBorderBR
+{
+	display: none;
+}

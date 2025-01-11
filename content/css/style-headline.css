@@ -1,0 +1,23 @@
+@charset 'UTF-8';
+body {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+ul {
+	width: 530px;
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	font-size: 80%;
+	color: #333;
+}
+li {
+	margin: 0;
+	padding: 8px;
+	line-height: 1.4;
+}
+li.even { background: #F1F1F1; }
+span.date { margin-right: 12px; }
+a { color: #09F; text-decoration: underline; }
+a:hover { color: #09F; text-decoration: none; }

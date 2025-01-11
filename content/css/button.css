@@ -1,0 +1,270 @@
+@charset 'UTF-8';
+/*******************************************************************************
+
+	各種ボタンのスタイル
+
+*******************************************************************************/
+.button
+{
+	border-radius: 1em;
+	display: inline-block;
+	padding: .5em 1.5em;
+	line-height: 1;
+	color: white;
+	text-shadow: 1px 1px 0 #3B3B3B;
+}
+.button:hover
+{
+	opacity: .5;
+}
+
+.button::before
+{
+	font-family: FontAwesome;
+	margin-right: .5em;
+}
+.button::after
+{
+	font-family: FontAwesome;
+	margin-left: .5em;
+}
+
+.font-awesome::before
+{
+  font-family: FontAwesome;
+  margin-right: .25em;
+}
+
+/*------------------------------------------------------------------------------
+  Bootstrap 上書き
+------------------------------------------------------------------------------*/
+.btn
+{
+  font-size: .875rem;
+}
+.btn::before
+{
+  font-family: FontAwesome;
+  margin-right: .25em;
+}
+
+/*------------------------------------------------------------------------------
+ 各ボタン 定義
+------------------------------------------------------------------------------*/
+.button.button-modify
+{
+	background-color: blue;
+}
+.button-modify::before
+{
+	content: '\f044';
+}
+
+.button.button-remove
+{
+	background-color: #900;
+}
+.button-remove::before
+{
+	content: '\f014';
+}
+
+.button-add-new::before
+{
+	content: '\f24a';
+}
+
+.button.button-back
+{
+	background-color: black;
+}
+.button-back::before
+{
+	content: '\f053';
+}
+
+.button.button-confirm
+{
+	background-color: violet;
+}
+.button-confirm::before
+{
+	content: '\f109';
+}
+
+.button.button-logout
+{
+	background-color: red;
+}
+.button-logout::before
+{
+	content: '\f08b';
+}
+
+.button.button-add
+{
+	background-color: red;
+}
+.button-add::before
+{
+	content: '\f0c5';
+}
+
+.button.button-clone
+{
+	background-color: orange;
+}
+.button-clone::before
+{
+	content: '\f24d';
+}
+
+.button.button-add-copy
+{
+	background-color: salmon;
+}
+.button-add-copy::before
+{
+	content: '\f249';
+}
+
+.button.button-increse
+{
+	background-color: purple;
+}
+.button-increse::before
+{
+	content: '\f055';
+}
+
+.button.button-decrese
+{
+	background-color: #900;
+}
+.button-decrese::before
+{
+	content: '\f056';
+}
+
+.button.button-fmanager
+{
+	background-color: purple;
+}
+.button-fmanager::before
+{
+	content: '\f093';
+}
+
+.button.button-submit-modify,
+.button.button-submit-post
+{
+	background-color: black;
+	min-width: 100px;
+}
+.button-submit-modify::before
+{
+	content: '';
+  margin-right: 0;
+}
+.button-submit-post::before
+{
+	content: '';
+  margin-right: 0;
+}
+
+.button.button-submit-upload
+{
+	background-color: royalblue;
+}
+.button-submit-upload::before
+{
+	content: '\f093';
+}
+
+
+.button.button-close-window,
+.button.button-process-done
+{
+	background-color: black;
+	min-width: 120px;
+}
+.button-close-window::before
+{
+	content: '\f00d';
+}
+.button-process-done::before
+{
+	content: '';
+}
+
+
+.button.button-clear-date
+{
+	background-color: #d8d8d8;
+  border: 1px solid #999;
+	color: black;
+	text-shadow: 1px 1px 0 white;
+}
+
+.button-clear-date::before
+{
+	content: '';
+  margin-right: 0;
+}
+
+.button.button-docs
+{
+	background-color: royalblue;
+}
+.button-docs::before
+{
+	content: '\f02d';
+}
+.button.button-yes
+{
+  background-color: #eee;
+}
+.button.button-cancel
+{
+  background-color: #d8d8d8;
+}
+
+/*------------------------------------------------------------------------------
+ 記事移動の丸ボタン・定義
+------------------------------------------------------------------------------*/
+.button-top,
+.button-bottom,
+.button-up,
+.button-down
+{
+	display: inline-block;
+	vertical-align: middle;
+	text-indent: -99999px;
+	text-align: left;
+	overflow: hidden;
+	width:16px;
+	height: 16px;
+	background-size: contain;
+	background-position:center center;
+	background-repeat: no-repeat;
+	border-radius: 0;
+	padding: 0;
+	text-shadow: none;
+}
+.button.button-top
+{
+	background-image: url(../images/cgi/top.svg);
+}
+.button.button-bottom
+{
+	background-image: url(../images/cgi/bottom.svg);
+}
+.button.button-up
+{
+	background-image: url(../images/cgi/up.svg);
+}
+.button.button-down
+{
+	background-image: url(../images/cgi/down.svg);
+}
+

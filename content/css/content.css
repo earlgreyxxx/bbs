@@ -1,0 +1,11 @@
+@charset 'UTF-8';
+/*******************************************************************************
+
+  TinyMCE用スタイル定義
+
+*******************************************************************************/
+body
+{
+	font-size: 90%;
+	font-family: "游ゴシック", "Yu Gothic", YuGothic, "Hiragino Kaku Gothic ProN", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
+}

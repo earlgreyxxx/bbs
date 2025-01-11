@@ -1,0 +1,360 @@
+@charset 'UTF-8';
+/*******************************************************************************
+
+  管理者 モード エディター画面
+
+*******************************************************************************/
+body
+{
+	background-color: #f3f3f3;
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+label
+{
+  margin-bottom: 0!important;
+}
+
+/*
+ TINYMCE
+*********/
+.mce-menubtn.mce-fixed-width span
+{
+	font-size: 90%;
+}
+
+
+td.attached
+{
+	background-color: #eee;
+	white-space: nowrap;
+	text-align: center;
+	vertical-align: middle;
+}
+
+div.files
+{
+	margin-bottom: .5em;
+}
+
+textarea
+{
+	display: block;
+}
+
+.editor-header
+{
+	width: 1024px;
+  margin: 1em auto;
+	padding: .5em 0;
+	text-align: center;
+	position: relative;
+}
+.editor-header > a.submit-cancel
+{
+	position: absolute;
+	left: 0;
+}
+.editor-header > h1
+{
+	margin: 0;
+	font-size: 150%;
+}
+
+.article-editor
+{
+	width: 1024px;
+  margin: 1em auto;
+  background-color:white;
+	/* border-radius: 1em; */
+	border: 1px solid #bbb;
+	overflow: hidden;
+	/* box-shadow: 0 0 7px rgba(0,0,0,.5); */
+}
+.article-editor .head,
+.article-editor .body,
+.article-editor .foot
+{
+
+}
+.article-editor .column
+{
+	padding: .75em;
+	border-bottom: 1px solid #DFD682;
+	position: relative;
+}
+.article-editor .column:last-child
+{
+	border-bottom: none;
+}
+.article-editor .column.nowrap
+{
+	white-space: nowrap;
+}
+.article-editor .column.attrs *
+{
+  vertical-align: middle;
+}
+
+.article-editor .attrs
+{
+	background-color: #DFD682;
+}
+
+.article-editor > .head
+{
+  background-color: #e8e8e8;
+}
+.article-editor > .body
+{
+	overflow: hidden;
+}
+.article-editor > .foot
+{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.article-editor .column.commands
+{
+	background-color: lightsalmon;
+	text-align: center;
+}
+.article-editor .column.commands p
+{
+  margin: 0 !important;
+}
+
+
+.article-editor .editor-body
+{
+	padding: 1.4em;
+}
+.article-editor .editor-image
+{
+	float: left;
+  width: 200px;
+}
+.article-editor .editor-image ul
+{
+  padding: 0;
+  margin: 0;
+}
+.article-editor .editor-image ul > li
+{
+  display: block;
+  list-style: none;
+  padding: 0 0 1em 0;
+  margin: 0 0 1em 0;
+  overflow: hidden;
+  border-bottom: 1px dotted #bbb;
+}
+.article-editor .editor-image ul > li:last-child
+{
+  margin: 0;
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+.article-editor .editor-image ul > li  img
+{
+	border: 1px solid #aaa;
+	display: block;
+	overflow: hidden;
+	width: calc(100% - 2px);
+}
+.article-editor .editor-image ul > li > span
+{
+	display: block;
+	text-align: left;
+	line-height: 1.4;
+}
+.article-editor .editor-image ul > li > span.image-wrap
+{
+  position: relative;
+}
+.article-editor .editor-image ul > li input[type="file"]
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 1px;
+  opacity: 0;
+}
+.article-editor .editor-image ul > li input[type="checkbox"]
+{
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.article-editor .editor-image ul > li input[type="checkbox"] + label
+{
+  font-size: 90%;
+}
+
+.article-editor .editor-image span.delete-image
+{
+  text-align: center;
+}
+.article-editor .editor-image span.delete-image > *
+{
+  display: inline-block;
+	vertical-align: middle;
+}
+
+
+.article-editor .text
+{
+	font-size: 100%;
+	padding: 2px;
+	margin: 0;
+}
+.article-editor .text.full
+{
+	width: calc(100% - 4px - 2px);
+}
+.article-editor input.text[readonly]
+{
+	background-color: #f6f6f6;
+	border: 1px solid #999;
+}
+
+.article-editor input.text.subject
+{
+	width: 52%;
+}
+.article-editor input.text.date
+{
+	text-align:center;
+	width: 200px;
+}
+.article-editor input.text.headcolor
+{
+	width: 7em;
+}
+
+.article-editor input[type=submit]
+{
+	border:1px solid gray;
+	width:200px;
+}
+
+.article-editor input[type=file][name=image]
+{
+	width: 100%;
+	display: block;
+}
+
+.column > .inner-right
+{
+	position: absolute;
+	top: 1em;
+	right: 1em;
+}
+
+.article-editor div.notice
+{
+	text-align:center;
+	font-size:90%;
+	font-weight: bold;
+	margin: 1em 0;
+}
+
+.article-editor table
+{
+	margin-bottom: 1em;
+  font-size: 90%;
+  border-collapse: collapse;
+}
+
+.article-editor th,
+.article-editor td
+{
+	padding: .5em 1em;
+  border: 1px solid white;
+}
+.article-editor th
+{
+	background-color: #eee;
+	font-weight: normal;
+	text-align: center;
+	vertical-align: middle;
+	white-space: nowrap;
+}
+
+.article-editor td
+{
+	background-color: #f6f6f6;
+	line-height: 2;
+}
+.article-editor td > *
+{
+	vertical-align: middle;
+}
+.article-editor td p
+{
+  margin: .5rem 0 !important;
+}
+
+.filename-notice
+{
+	color:blue;
+	font-size: 90%;
+	display: block;
+	margin: .5em 0;
+}
+
+.article-editor .file-manager
+{
+	padding: .5em 0;
+	border-top: 1px dashed #d8d8d8;
+}
+.article-editor .file-manager *
+{
+	vertical-align: middle;
+}
+#submit-set-date
+{
+	display: inline-block;
+}
+
+/*
+ clear fix
+****************/
+.clearfix:after,
+.clearfix-left:after,
+.clearfix-right:after {
+  content: ".";  /* 新しい要素を作る */
+  display: block;  /* ブロックレベル要素に */
+  clear: both;
+  height: 0;
+  visibility: hidden;
+}
+
+.clearfix-left:after {
+  clear: left;
+}
+
+.clearfix-right:after {
+  clear: right;
+}
+
+.clearfix,
+.clearfix-left,
+.clearfix-right {
+  min-height: 1px;
+}
+
+* html .clearfix,
+* html .clearfix-left,
+* html .clearfix-right {
+  height: 1px;
+  /*\*//*/
+  height: auto;
+  overflow: hidden;
+  /**/
+}

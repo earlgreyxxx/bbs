@@ -1,0 +1,385 @@
+@charset 'UTF-8';
+/*******************************************************************************
+
+    スタイル定義
+
+*******************************************************************************/
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('./css/woff/fontawesome-webfont.woff');
+}
+
+/*-------------------------------------------------------------------------
+    .clearfix,.clearfix-left,clearfix-right
+--------------------------------------------------------------------------*/
+.clearfix:after,
+.clearfix-left:after,
+.clearfix-right:after {
+  content: ".";  /* 新しい要素を作る */
+  display: block;  /* ブロックレベル要素に */
+  clear: both;
+  height: 0;
+  visibility: hidden;
+}
+
+.clearfix-left:after {
+  clear: left;
+}
+
+.clearfix-right:after {
+  clear: right;
+}
+
+.clearfix,
+.clearfix-left,
+.clearfix-right {
+  min-height: 1px;
+}
+
+* html .clearfix,
+* html .clearfix-left,
+* html .clearfix-right {
+  height: 1px;
+  /*\*//*/
+  height: auto;
+  overflow: hidden;
+  /**/
+}
+
+h1.position-relative > small {
+  font-size: 1rem;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+/*
+記事共通
+***************/
+.article
+{
+	margin: 2em 0 4em;
+}
+article::after
+{
+	content: ' ';
+	display: block;
+	float: left;
+}
+.article .article-header
+{
+	font-size: 110%;
+	position: relative;
+	padding-right: 128px;
+  background-color: #f0e8f75c;
+}
+
+.article .article-header span
+{
+	display: inline-block;
+}
+
+.article .article-header .protected
+{
+	padding: .4em 1em;
+	background-color: red;
+	color: yellow;
+	border-radius: 5px;
+	font-size: 75%;
+	margin-right: .5em;
+	line-height: 1;
+}
+
+.article .article-header .title
+{
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  color: #004085;
+}
+.article .article-header > .date
+{
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.article .article-header > .notify 
+{
+  font-weight: bold;
+  font-size: 70%;
+  padding: .25em .5em;
+  background-color: #e1e1e1;
+  border-radius: 5px;
+  color: white;
+  margin: 0 .75em 0 0;
+}
+
+.article .article-header > .notify.notify-new 
+{
+  background-color: red;
+}
+.article .article-header > .notify.notify-look
+{
+  background-color: red;
+}
+.article .article-header > .notify.notify-topics
+{
+  background-color: green;
+}
+
+.article-images {
+  list-style: none;
+}
+
+.article-images > li > a {
+  display: block;
+  width: 10rem;
+  height: 10rem;
+  overflow: hidden;
+  margin: 0 auto;
+}
+.article-images a > img { 
+  object-fit: contain;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.article .article-body {
+  margin: 1rem 0;
+}
+
+.article .article-body.has-image
+{
+	margin-right: 220px;
+}
+
+.article.protected
+{
+	opacity: .25;
+}
+
+p.commands
+{
+	text-align: center;
+}
+
+a.submit-show-all
+{
+	display: inline-block;
+	padding: 1em 2em;
+	background-color: rgb(10, 116, 185);
+	color: white;
+	text-decoration: none;
+	
+}
+a.submit-show-all:hover
+{
+	background-color: rgba(10, 116, 185,.5);
+}
+
+/*
+ページネーション
+*******************/
+ul.pagenation
+{
+  margin: 2em 0;
+  text-align: center;
+	padding: 0;
+}
+ul.pagenation > li
+{
+	border: 1px solid #d8d8d8;
+	display:inline-block;
+	margin: 0 .25em .5em .25em;
+	background-color: white;
+}
+ul.pagenation > li:hover
+{
+	background-color: #eee;
+}
+ul.pagenation > li.current
+{
+	background-color: black;
+	color: white;
+}
+
+ul.pagenation > li > a,
+ul.pagenation > li > span
+{
+	display: block;
+	padding: .5em 1em;
+}
+ul.pagenation > li > a
+{
+	text-decoration: none;
+	color: inherit;
+}
+
+/*
+ページ送り
+***************/
+ul.paging
+{
+	text-align: center;
+	margin: 2em 0;
+	padding: 0;
+}
+ul.paging > li
+{
+	display: inline-block;
+	margin: 0 .25em;
+	background-color: #f1f1f1;
+}
+ul.paging > li > a
+{
+	display: block;
+	padding: 1.5em 2.5em;
+	color: inherit;
+	font-size: 120%;
+	text-decoration: none;
+}
+ul.paging > li.next > a
+{
+	background-color: rgb(0,200,255);
+	color: white;
+}
+ul.paging > li.next > a::after
+{
+	font-family: FontAwesome;
+	margin-left: .5em;
+	content: '\f054';
+}
+ul.paging > li.next > a:hover
+{
+	background-color: rgba(0,200,255,.75);
+	color: white;
+}
+
+ul.paging > li.prev > a
+{
+	background-color: rgb(0,150,255);
+	color: white;
+}
+ul.paging > li.prev > a::before
+{
+	font-family: FontAwesome;
+	margin-right: .5em;
+	content: '\f053';
+}
+ul.paging > li.prev > a:hover
+{
+	background-color: rgba(0,150,255,.75);
+	color: white;
+}
+
+/*
+添付ファイル
+*****************/
+ul.article-attaches
+{
+	margin: 1em 0;
+	padding: 0 0 0 6rem;
+}
+ul.article-attaches:before
+{
+  content: 'ファイル';
+  position: absolute;
+  top: .3rem;
+  left: 0;
+  text-align: center;
+  width: 6rem;
+}
+ul.article-attaches > li
+{
+	display: inline-block;
+	margin: 1em .5em;
+}
+ul.article-attaches > li > a
+{
+	display: block;
+	font-size: 90%;
+	font-weight: normal;
+  max-width: 12rem;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+ul.article-attaches > li > a::before
+{
+	font-family: FontAwesome;
+	margin-right: .5em;
+	content: '\f019';
+}
+
+
+/*------------------------------------------------------------------------------
+
+ 幅狭の場合のスタイル・オーバーライド
+
+------------------------------------------------------------------------------*/
+@media screen and (max-width: 768px) {
+	body
+	{
+		margin: 0;
+		padding: 0;
+	}
+	.main
+	{
+		padding: 0 1em;
+	}
+    .article-images > li > a
+    {
+     	width: auto;
+    	height: auto;
+    }
+	.article .article-body.has-image
+	{
+		margin-right: 0;
+	}
+	.article .article-header
+	{
+		padding-right: 0;
+	}
+	.article .article-header > span:not(.notify)
+	{
+		display: block !important;
+	}
+	.article .article-header > .date
+	{
+	  position: static;
+	}
+
+	ul.paging
+	{
+		margin-left: -1em;
+		margin-right: -1em;
+	}
+	ul.paging:after
+	{
+		display: block;
+		clear: left;
+		content: ' ';
+	  height: 0;
+	}
+	ul.paging > li
+	{
+		float: left;
+	  width: calc(50% - 1px);
+		margin: 0;
+	}
+	ul.paging > li.next
+	{
+		border-left: 1px solid white;
+	}
+	ul.paging > li.prev
+	{
+		border-right: 1px solid #d8d8d8;
+	}
+	ul.paging > li > a
+	{
+		font-size: 90%;
+		padding: 1.5em 2.5em;
+	}
+}
