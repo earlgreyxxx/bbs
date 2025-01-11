@@ -130,9 +130,6 @@ sub defEnd
       <!--フッター-->
       <footer>
         <div class="inner">
-          <p>
-            &copy;DAIICHI DENSHI CO.,LTD. ALL RIGHTS RESERVED.
-          </p>
         </div>
       </footer>
 

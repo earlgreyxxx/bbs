@@ -35,3 +35,10 @@ Build.bat
 /VERSION
 /data/template/attached/*
 !/data/template/attached/.gitignore
+/data/*
+!/data/.htaccess
+!/data/template
+/tempo/*
+/lock/*
+!/lock/.gitignore
+!/lock/.htaccess
